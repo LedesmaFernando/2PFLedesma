@@ -36,8 +36,8 @@ export class CoursesService {
     this.courses = updatedCourses;
   }
 
-  deleteCourse(course: Course) {
-    const updatedCourses = this.courses.filter((c) => c.id !== course.id);
+  deleteCourse(id: number) {
+    const updatedCourses = this.courses.filter((c) => c.id !== id);
     this.courseSubject.next(updatedCourses);
     this.courses = updatedCourses;
   }

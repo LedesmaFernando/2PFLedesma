@@ -26,6 +26,10 @@ export class CoursesTable {
     this.dataSource.paginator = this.paginator;
   }
 
+  onDeleteCourse(id:number){
+    this.courseService.deleteCourse(id);
+  }
+
   @ViewChild(MatPaginator) paginator!:MatPaginator;
 
   applyFilter(event:Event){

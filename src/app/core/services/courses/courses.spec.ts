@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
+import { Courses } from '../../../featured/dashboard/courses/courses';
 
-import { Courses } from './courses';
+
 
 describe('Courses', () => {
   let service: Courses;

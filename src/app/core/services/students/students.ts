@@ -19,7 +19,7 @@ export class StudentsServices {
       this.studentSubject.next(this.students);
     }
   
-    getStuent(id:number){
+    getStudent(id:number){
       return of(this.students.find(course => course.id == id));
     }
   

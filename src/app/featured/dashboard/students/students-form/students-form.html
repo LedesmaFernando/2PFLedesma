@@ -1,1 +1,57 @@
 <p>students-form works!</p>
+<form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+  @if (isEditing) {
+  <mat-form-field appearance="fill">
+    <mat-label>ID</mat-label>
+    <input matInput disabled value="{{ studentId }}" />
+  </mat-form-field>
+  }
+
+  <mat-form-field class="w-full">
+    <mat-label>Name</mat-label>
+    <input
+      [ngClass]="{
+          'is-invalid': inputInvalid('name'),
+          'is-valid': inputValid('name') && createForm.get('name')?.dirty,
+        }"
+      matInput
+      name="name"
+      formControlName="name"
+    />
+
+    <mat-error> {{ getError('name') }} </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="w-full">
+    <mat-label>Lastname</mat-label>
+    <input
+      [ngClass]="{
+          'is-invalid': inputInvalid('lastName'),
+          'is-valid': inputValid('lastName') && createForm.get('lastName')?.dirty,
+        }"
+      matInput
+      name="lastName"
+      formControlName="lastName"
+    />
+
+    <mat-error> {{ getError('lastName') }} </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="w-full">
+    <mat-label>Email</mat-label>
+    <input
+      [ngClass]="{
+          'is-invalid': inputInvalid('email'),
+          'is-valid': inputValid('email') && createForm.get('email')?.dirty,
+        }"
+      matInput
+      name="email"
+      formControlName="email"
+    />
+
+    <mat-error> {{ getError('email') }} </mat-error>
+  </mat-form-field>
+
+
+  <button mat-raised-button color="primary">Guardar</button>
+</form>

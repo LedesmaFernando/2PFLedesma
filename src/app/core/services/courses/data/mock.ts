@@ -6,7 +6,7 @@ export const mockCourses: Course[] = [
     id: 1,
     title: 'Angular',
     description:
-      'En este curso aprenderás a construir aplicaciones web con Angular. Angular se destaca por su enfoque en la modularización, lo que permite desarrollar aplicaciones robustas y escalables de manera más fácil y rápida.',
+      'In this course, you will learn how to build web applications with Angular. Angular stands out for its modular approach, which allows you to develop robust and scalable applications more easily and quickly.',
     beginDate: new Date('2022-01-01'),
     endDate: new Date('2022-12-31'),
     status: CourseStatus.SCHEDULED,
@@ -15,7 +15,7 @@ export const mockCourses: Course[] = [
     id: 2,
     title: 'React',
     description:
-      'React es una biblioteca de JavaScript para construir interfaces de usuario. En este curso aprenderás componentes, hooks y cómo gestionar el estado de tus aplicaciones.',
+      'React is a JavaScript library for building user interfaces. In this course, you will learn about components, hooks, and how to manage your application state.',
     beginDate: new Date('2022-03-01'),
     endDate: new Date('2022-10-01'),
     status: CourseStatus.STARTED,
@@ -24,7 +24,7 @@ export const mockCourses: Course[] = [
     id: 3,
     title: 'Vue.js',
     description:
-      'Vue.js es un framework progresivo para construir interfaces de usuario con una curva de aprendizaje suave y una arquitectura flexible.',
+      'Vue.js is a progressive framework for building user interfaces with a gentle learning curve and flexible architecture.',
     beginDate: new Date('2022-04-15'),
     endDate: new Date('2022-11-15'),
     status: CourseStatus.FINISHED,
@@ -33,7 +33,7 @@ export const mockCourses: Course[] = [
     id: 4,
     title: 'Node.js',
     description:
-      'Aprende a desarrollar aplicaciones del lado del servidor con Node.js. Este curso incluye creación de APIs RESTful, manejo de bases de datos y despliegue.',
+      'Learn to develop server-side applications with Node.js. This course covers creating RESTful APIs, database handling, and deployment.',
     beginDate: new Date('2023-01-10'),
     endDate: new Date('2023-08-10'),
     status: CourseStatus.CANCELLED,
@@ -42,7 +42,7 @@ export const mockCourses: Course[] = [
     id: 5,
     title: 'TypeScript',
     description:
-      'TypeScript agrega tipado estático a JavaScript y te permite desarrollar aplicaciones más seguras y mantenibles. Aprende sus conceptos clave y buenas prácticas.',
+      'TypeScript adds static typing to JavaScript and allows you to build safer and more maintainable applications. Learn its key concepts and best practices.',
     beginDate: new Date('2023-05-01'),
     endDate: new Date('2023-12-01'),
     status: CourseStatus.SCHEDULED,

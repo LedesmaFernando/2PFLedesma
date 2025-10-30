@@ -6,6 +6,15 @@ import { Dashboard } from './featured/dashboard/dashboard';
 
 const routes: Routes = [
 
+{ 
+  path: '', 
+  component: Dashboard
+},
+{ 
+  path: 'home', 
+  redirectTo: '', 
+  pathMatch: 'full' 
+},
 {
   path: 'login',
   component:Login,

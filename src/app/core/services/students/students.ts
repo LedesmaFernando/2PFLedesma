@@ -2,44 +2,56 @@ import { Injectable } from '@angular/core';
 import { Student } from './model/Student';
 import { BehaviorSubject, of } from 'rxjs';
 import { mockStudents } from './data/mock';
+import { API_URL } from '../utils/constants';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentsServices {
-  private students: Student[] = mockStudents;
+  private students: Student[] = [];
   private studentSubject = new BehaviorSubject<Student[]>([]);
   students$ = this.studentSubject.asObservable();
+
+  private studentsUrl = `${API_URL}/students`;
   
-    constructor(){
-      this.studentSubject.next(this.students);
+    constructor(private http:HttpClient){
+      this.getStudents();
     }
   
     getStudents(){
-      this.studentSubject.next(this.students);
+      this.http.get<Student[]>(this.studentsUrl).subscribe((students) => {
+            this.students = students;
+            this.studentSubject.next(students)});
     }
   
     getStudent(id:number){
-      return of(this.students.find(course => course.id == id));
+      return this.http.get<Student>(`${this.studentsUrl}/${id}`);
     }
   
     addStudent(student:Student){
-      const newId = this.students[this.students.length - 1].id + 1;
-      student.id = newId;
-      this.students.push(student);
-      this.studentSubject.next([...this.students]); 
+      const newId = String(Number(this.students[this.students.length - 1].id) + 1);
+          student.id = newId;
+          this.http.post<Student>(this.studentsUrl, student).subscribe((student) => {
+            this.students.push(student);
+            this.studentSubject.next([... this.students]);
+          }); 
     }
   
     updateStudent(student:Student) {
-      const updatedStudents = this.students.map((c) => (c.id === student.id ? student : c));
-      this.studentSubject.next(updatedStudents);
-      this.students = updatedStudents;
+      const updatedStudents = this.students.map((s) => (s.id === student.id ? student : s));
+          this.http.put<Student>(`${this.studentsUrl}/${student.id}`, student).subscribe(() => {
+            this.students = updatedStudents;
+            this.studentSubject.next(updatedStudents);
+          })
     }
   
     deleteStudent(id: number) {
-      const updatedStudents = this.students.filter((c) => c.id !== id);
-      this.studentSubject.next(updatedStudents);
-      this.students = updatedStudents;
+      const updatedStudents = this.students.filter((s) => s.id !== id);
+          this.http.delete<Student>(`${this.studentsUrl}/${id}`).subscribe(() => {
+            this.students = updatedStudents;
+            this.studentSubject.next(updatedStudents);
+          })
     }
   
 }

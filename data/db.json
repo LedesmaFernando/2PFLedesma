@@ -1,0 +1,129 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "email": "admin@example.com",
+      "password": "1234",
+      "rol": "ADMIN"
+    },
+    {
+      "id": "2",
+      "username": "juan",
+      "email": "juan@example.com",
+      "password": "juan",
+      "rol": "USER"
+    },
+    {
+      "id": "3",
+      "username": "maria",
+      "email": "maria@example.com",
+      "password": "maria",
+      "rol": "USER"
+    }
+  ],
+  "courses": [
+    {
+      "id": "1",
+      "title": "Angular",
+      "description": "In this course, you will learn how to build web applications with Angular. Angular stands out for its modular approach, which allows you to develop robust and scalable applications more easily and quickly.",
+      "beginDate": "2022-01-01",
+      "endDate": "2022-12-31",
+      "status": "SCHEDULED"
+    },
+    {
+      "id": "2",
+      "title": "React",
+      "description": "React is a JavaScript library for building user interfaces. In this course, you will learn about components, hooks, and how to manage your application state.",
+      "beginDate": "2022-03-01",
+      "endDate": "2022-10-01",
+      "status": "STARTED"
+    },
+    {
+      "id": "3",
+      "title": "Vue.js",
+      "description": "Vue.js is a progressive framework for building user interfaces with a gentle learning curve and flexible architecture.",
+      "beginDate": "2022-04-15",
+      "endDate": "2022-11-15",
+      "status": "FINISHED"
+    },
+    {
+      "id": "4",
+      "title": "Node.js",
+      "description": "Learn to develop server-side applications with Node.js. This course covers creating RESTful APIs, database handling, and deployment.",
+      "beginDate": "2023-01-10",
+      "endDate": "2023-08-10",
+      "status": "CANCELLED"
+    },
+    {
+      "id": "5",
+      "title": "TypeScript",
+      "description": "TypeScript adds static typing to JavaScript and allows you to build safer and more maintainable applications. Learn its key concepts and best practices.",
+      "beginDate": "2023-05-01",
+      "endDate": "2023-12-01",
+      "status": "SCHEDULED"
+    }
+  ],
+  "students": [
+    {
+      "id": "1",
+      "name": "María",
+      "lastName": "González",
+      "email": "maria.gonzalez@example.com"
+    },
+    {
+      "id": "2",
+      "name": "Juan",
+      "lastName": "Pérez",
+      "email": "juan.perez@example.com"
+    },
+    {
+      "id": "3",
+      "name": "Lucía",
+      "lastName": "Ramírez",
+      "email": "lucia.ramirez@example.com"
+    },
+    {
+      "id": "4",
+      "name": "Andrés",
+      "lastName": "López",
+      "email": "andres.lopez@example.com"
+    },
+    {
+      "id": "5",
+      "name": "Carla",
+      "lastName": "Martínez",
+      "email": "carla.martinez@example.com"
+    },
+    {
+      "id": "6",
+      "name": "Sofía",
+      "lastName": "Hernández",
+      "email": "sofia.hernandez@example.com"
+    },
+    {
+      "id": "7",
+      "name": "Diego",
+      "lastName": "Torres",
+      "email": "diego.torres@example.com"
+    },
+    {
+      "id": "8",
+      "name": "Valentina",
+      "lastName": "Flores",
+      "email": "valentina.flores@example.com"
+    },
+    {
+      "id": "9",
+      "name": "Mateo",
+      "lastName": "Castro",
+      "email": "mateo.castro@example.com"
+    },
+    {
+      "id": "10",
+      "name": "Camila",
+      "lastName": "Navarro",
+      "email": "camila.navarro@example.com"
+    }
+  ]
+}

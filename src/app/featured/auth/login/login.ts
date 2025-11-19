@@ -26,9 +26,7 @@ export class Login {
       return;
     }
     try{
-      this.authService.onLogin(this.loginForm.value.email,this.loginForm.value.password)
-      this.router.navigate(['/dashboard'])
-
+      this.authService.onLogin(this.loginForm.value.email,this.loginForm.value.password);
     }catch(error){
       console.log(error);
       alert(error);

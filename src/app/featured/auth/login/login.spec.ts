@@ -1,6 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Login } from './login';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
+import { provideHttpClient, withFetch } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { SharedModule } from '../../../shared/shared-module';
 
 describe('Login', () => {
   let component: Login;
@@ -8,9 +13,23 @@ describe('Login', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [Login]
-    })
-    .compileComponents();
+      declarations: [Login],
+      imports: [CommonModule, SharedModule],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            params: of({}),
+            snapshot: {
+              params: {
+                get: () => null,
+              },
+            },
+          },
+        },
+        provideHttpClient(withFetch()),
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(Login);
     component = fixture.componentInstance;

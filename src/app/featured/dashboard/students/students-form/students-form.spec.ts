@@ -1,6 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StudentsForm } from './students-form';
+import { CommonModule } from '@angular/common';
+import { StudentsRoutingModule } from '../students-routing-module';
+import { SharedModule } from '../../../../shared/shared-module';
+import { ActivatedRoute } from '@angular/router';
+import { provideHttpClient, withFetch } from '@angular/common/http';
+import { of } from 'rxjs';
 
 describe('StudentsForm', () => {
   let component: StudentsForm;
@@ -8,9 +14,23 @@ describe('StudentsForm', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [StudentsForm]
-    })
-    .compileComponents();
+      declarations: [StudentsForm],
+      imports: [CommonModule, StudentsRoutingModule, SharedModule],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            params: of({}),
+            snapshot: {
+              params: {
+                get: () => null,
+              },
+            },
+          },
+        },
+        provideHttpClient(withFetch()),
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(StudentsForm);
     component = fixture.componentInstance;

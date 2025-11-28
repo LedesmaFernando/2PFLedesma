@@ -1,8 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { AuthService } from './auth';
-import { ActivatedRoute } from '@angular/router';
-import { of } from 'rxjs';
+import { Router } from '@angular/router';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 
 describe('Auth', () => {
@@ -10,25 +9,16 @@ describe('Auth', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        {
-          provide: ActivatedRoute,
-          useValue: {
-            params: of({}),
-            snapshot: {
-              params: {
-                get: () => null,
-              },
-            },
-          },
-        },
-        provideHttpClient(withFetch()),
-      ],
+      providers:[AuthService, provideHttpClient(withFetch()), Router],
     });
     service = TestBed.inject(AuthService);
   });
-
   it('should be created', () => {
     expect(service).toBeTruthy();
-  });
+     });
+  it('it should return a boolean if it is logged in'), () => {
+    expect(service.isAuthenticated()).toBe(false);
+  }
+
+  
 });

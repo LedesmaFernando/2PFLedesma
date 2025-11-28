@@ -40,4 +40,12 @@ describe('StudentsTable', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should have table', () => {
+    const table = fixture.nativeElement.querySelector('table');
+    expect(table).toBeTruthy();
+  })
+  it('shold have more than 0 rows',() => {
+    const rows = fixture.nativeElement.querySelectorAll('td');
+    expect(rows.length).toBeGreaterThan(0);
+  })
 });
